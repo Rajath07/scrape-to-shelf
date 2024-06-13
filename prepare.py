@@ -7,7 +7,7 @@ base_url = "https://books.toscrape.com/catalogue/page-{}.html"
 book_base_url = "https://books.toscrape.com/catalogue/"
 
 # MongoDB connection setup (replace <username>, <password>, and <dbname> with your actual credentials and database name)
-connection_string = "mongodb+srv://arrowphoto1815827rajath:KFNpqgil4qSgwVyL@nodeexpressprojects.f9im4fg.mongodb.net/books_database?retryWrites=true&w=majority&appName=NodeExpressProjects"
+connection_string = "" #Add your mongoDB atlas connection string here
 client = MongoClient(connection_string)
 db = client['books_database']  # Database name
 collection = db['books_collection']  # Collection name
