@@ -1,1 +1,1 @@
-Add your MongoDB connection string in the preparep.py file before running it
+Add your MongoDB connection string in the prepare.py file before running it
