@@ -7,10 +7,14 @@ base_url = "https://books.toscrape.com/catalogue/page-{}.html"
 book_base_url = "https://books.toscrape.com/catalogue/"
 
 # MongoDB connection setup (replace <username>, <password>, and <dbname> with your actual credentials and database name)
-connection_string = ""
+connection_string = "mongodb+srv://arrowphoto1815827rajath:KFNpqgil4qSgwVyL@nodeexpressprojects.f9im4fg.mongodb.net/books_database?retryWrites=true&w=majority&appName=NodeExpressProjects"
 client = MongoClient(connection_string)
 db = client['books_database']  # Database name
 collection = db['books_collection']  # Collection name
+
+# Function to convert price string to float
+def convert_price(price_str):
+    return float(price_str.replace('£', '').replace(',', '').strip())
 
 # Function to scrape book details from a single book page
 def scrape_book_details(book_url):
@@ -43,15 +47,15 @@ def scrape_book_details(book_url):
 
     book_info = {
         'title': title,
-        'price': price,
+        'price': convert_price(price),
         'availability': availability,
         'description': description,
         'upc': upc,
         'product_type': product_type,
-        'price_excl_tax': price_excl_tax,
-        'price_incl_tax': price_incl_tax,
-        'tax': tax,
-        'number_of_reviews': number_of_reviews,
+        'price_excl_tax': convert_price(price_excl_tax),
+        'price_incl_tax': convert_price(price_incl_tax),
+        'tax': convert_price(tax),
+        'number_of_reviews': int(number_of_reviews),
         'category': category,
         'star_rating': star_rating
     }

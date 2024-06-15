@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="BooksData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TopExpensiveBooks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Book" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="_id" type="xs:string" />
+                    <xs:element name="title" type="xs:string"/>
+                    <xs:element name="price" type="xs:float"/>
+                    <xs:element name="availability" type="xs:string"/>
+                    <xs:element name="description" type="xs:string" minOccurs="0"/>
+                    <xs:element name="upc" type="xs:string"/>
+                    <xs:element name="product_type" type="xs:string"/>
+                    <xs:element name="price_excl_tax" type="xs:float"/>
+                    <xs:element name="price_incl_tax" type="xs:float"/>
+                    <xs:element name="tax" type="xs:float"/>
+                    <xs:element name="number_of_reviews" type="xs:int"/>
+                    <xs:element name="category" type="xs:string"/>
+                    <xs:element name="star_rating" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CategoryCounts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Category" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="_id" type="xs:string"/>
+                    <xs:element name="count" type="xs:int"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AveragePriceByStarRating">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StarRating" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="_id" type="xs:string"/>
+                    <xs:element name="average_price" type="xs:float"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
