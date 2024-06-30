@@ -2,7 +2,6 @@ from pymongo import MongoClient
 import xml.etree.ElementTree as ET
 import xmlschema
 
-# MongoDB connection setup
 connection_string = "mongodb+srv://arrowphoto1815827rajath:KFNpqgil4qSgwVyL@nodeexpressprojects.f9im4fg.mongodb.net/books_database?retryWrites=true&w=majority&appName=NodeExpressProjects"
 client = MongoClient(connection_string)
 db = client['books_database']  # Database name
@@ -47,7 +46,6 @@ def run_queries_and_generate_xml():
     # Query 6: Find books with a 5-star rating
     five_star_books = list(collection.find({"star_rating": "Five"}))
 
-    # Generate XML
     generate_xml(top_expensive_books, category_counts, average_price_star_rating, lowest_price_books, price_range_counts, five_star_books)
 
 # Function to generate XML and validate against XSD

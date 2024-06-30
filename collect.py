@@ -2,11 +2,9 @@ import requests
 from lxml import html
 from pymongo import MongoClient
 
-# URL of the website
 base_url = "https://books.toscrape.com/catalogue/page-{}.html"
 book_base_url = "https://books.toscrape.com/catalogue/"
 
-# MongoDB connection setup (replace <username>, <password>, and <dbname> with your actual credentials and database name)
 connection_string = "mongodb+srv://arrowphoto1815827rajath:KFNpqgil4qSgwVyL@nodeexpressprojects.f9im4fg.mongodb.net/books_database?retryWrites=true&w=majority&appName=NodeExpressProjects"
 client = MongoClient(connection_string)
 db = client['books_database']  # Database name
@@ -25,7 +23,6 @@ def scrape_book_details(book_url):
     price = tree.xpath('//p[@class="price_color"]/text()')[0]
     availability = tree.xpath('//p[@class="instock availability"]/text()')[1].strip()
     
-    # Handle missing description
     try:
         description = tree.xpath('//div[@id="product_description"]/following-sibling::p/text()')[0]
     except IndexError:
@@ -37,11 +34,7 @@ def scrape_book_details(book_url):
     price_incl_tax = tree.xpath('//th[text()="Price (incl. tax)"]/following-sibling::td/text()')[0]
     tax = tree.xpath('//th[text()="Tax"]/following-sibling::td/text()')[0]
     number_of_reviews = tree.xpath('//th[text()="Number of reviews"]/following-sibling::td/text()')[0]
-    
-    # Extract category from breadcrumb navigation
     category = tree.xpath('//ul[@class="breadcrumb"]/li[3]/a/text()')[0]
-    
-    # Extract star rating
     star_rating_class = tree.xpath('//p[contains(@class, "star-rating")]/@class')[0]
     star_rating = star_rating_class.split()[-1]
 
