@@ -93,6 +93,13 @@ def generate_xml(top_expensive_books, category_counts, average_price_star_rating
     xml_tree.write("books_data.xml")
     print("books_data.xml generated")
 
+    with open("books_data.xml", "wb") as f:
+        f.write(b'<?xml version="1.0"?>\n')
+        f.write(b'<?xml-stylesheet type="text/xsl" href="books.xsl"?>\n')
+        xml_tree.write(f, encoding='utf-8', xml_declaration=False)
+
+    print("XML file created successfully.")
+
     # Validate against XSD
     validate_xml("books_data.xml", "books_data.xsd")
 
