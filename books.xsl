@@ -85,6 +85,8 @@
             </style>
         </head>
         <body>
+
+            <!--Table showing Top 5 expensive books (Query 1) -->
             <h1 style="text-align: center;">TOP 5 EXPENSIVE BOOKS</h1>
             <table border="1" style="width:100%">
                 <tr style="height:50px">
@@ -114,7 +116,7 @@
                 </xsl:for-each>
             </table>
 
-
+            <!--Table showing number of books available in each category (Query 2) -->
              <h1 style="text-align: center;">CATEGORY COUNT</h1>
             <table border="1" style="width:100%">
                 <tr style="height:50px">
@@ -134,7 +136,7 @@
                 </xsl:for-each>
             </table>
 
-
+            <!--Table showing average price of books for each star rating (Query 3) -->
             <h1 style="text-align: center;">AVERAGE PRICE BY STAR RATING</h1>
             <table border="1" style="width:100%">
                 <tr style="height:50px">
@@ -153,6 +155,8 @@
                 </xsl:for-each>
             </table>
 
+
+            <!--Table showing top 5 books with the lowest price (Query 4) -->
              <h1 style="text-align: center;">LOWEST PRICE BOOKS</h1>
             <table border="1" style="width:100%">
                 <tr style="height:50px">
@@ -179,7 +183,7 @@
                 </xsl:for-each>
             </table>
 
-
+            <!--Table showing the number of books in different price ranges (Query 5) -->
             <h1 style="text-align: center;">PRICE RANGES</h1>
             <table border="1" style="width:100%">
                 <tr style="height:50px">
@@ -198,6 +202,7 @@
                 </xsl:for-each>
             </table>
 
+            <!--Table showing books with a 5-star rating (Query 6) -->
             <h1 style="text-align: center;">5 STAR BOOKS</h1>
             <table border="1" style="width:100%">
                 <tr style="height:50px">

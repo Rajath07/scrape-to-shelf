@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-
+  <!-- Root element containing all book-related data -->
   <xs:element name="BooksData">
     <xs:complexType>
       <xs:sequence>
+        <!-- Element containing information about the top expensive books -->
         <xs:element name="TopExpensiveBooks">
           <xs:complexType>
             <xs:sequence>
@@ -29,7 +30,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        
+        <!-- Element containing information about the number of books in each category -->
         <xs:element name="CategoryCounts">
           <xs:complexType>
             <xs:sequence>
@@ -45,6 +46,7 @@
           </xs:complexType>
         </xs:element>
 
+        <!-- Element containing information about the average price of books in each star rating category -->
         <xs:element name="AveragePriceByStarRating">
           <xs:complexType>
             <xs:sequence>
@@ -60,6 +62,7 @@
           </xs:complexType>
         </xs:element>
 
+        <!-- Element containing information about the lowest priced books -->
         <xs:element name="LowestPriceBooks">
           <xs:complexType>
             <xs:sequence>
@@ -85,7 +88,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-
+        <!-- Element containing information about the number of books in different price ranges -->
         <xs:element name="PriceRanges">
           <xs:complexType>
             <xs:sequence>
@@ -100,7 +103,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-
+        <!-- Element containing information about the five star rated books -->
         <xs:element name="FiveStarBooks">
           <xs:complexType>
             <xs:sequence>
